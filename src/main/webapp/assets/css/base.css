@@ -1,0 +1,242 @@
+@charset "ISO-8859-1";
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #EE4d2d;
+    --border-color:#dbdbdb;
+    --star-gold-color:#ffce3e;
+    --header-height:120px;
+    --navber-height:28px;
+    --header-with-search-height:calc((var(--header-height) - var(--navber-height)));
+    --header-sort-bar-height:46px;
+}
+*{
+    box-sizing: inherit;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full--width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    
+}
+.pull-right{
+    float: right !important;
+}
+
+/* Responsive */
+.grid__column-2 {
+    width: 16.6667%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.grid__column-2-4 {
+    width: 20%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.grid__column-10 {
+    width: 83.3334%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@media screen {
+    
+}
+/* Animations */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    display:none;
+}
+
+.modal__layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.modal__content{
+    --growth-from:0.5;
+    --growth-to:1;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Btn style */
+.btn{
+    height: 34px;
+    min-width: 142px;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disable{
+    cursor: default;
+}
+
+.btn.btn--size-s{
+    height: 32px;
+    padding: 0 8px;
+}
+
+/* Selection */
+.select-input {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 200px;
+    background-color: var(--white-color);
+}
+
+.select-input:hover .select-input__list{
+    display: block;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+
+}
+
+.select-input__icon {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.select-input__list {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 10px 16px;
+    display: none;
+}
+
+.select-input__list::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+
+.select-input__link {
+    display: block;
+    padding: 5px 0px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-item {
+   padding: 16px;
+}
+
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item__link {
+	cursor:pointer;
+    --height:30px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    display: block;
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+    
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: rgba(197, 105, 72, 0.9);
+}
